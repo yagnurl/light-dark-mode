@@ -6,7 +6,12 @@ const image2 = document.getElementById('image2')
 const image3 = document.getElementById('image3')
 const textBox = document.getElementById('text-box')
 
-
+// Dark or Light images
+function imageMode(color) {
+    image1.src = `./img/undraw_proud_coder_${color}.svg`;
+    image2.src = `./img/undraw_conceptual_idea_${color}.svg`;
+    image3.src = `./img/undraw_conceptual_idea_${color}.svg`;
+}
 
 
 
@@ -16,10 +21,8 @@ function darkMode() {
     textBox.style.backgroundColor = 'rgb(255 255 255 / 50%)';
     toggleIcon.children[0].textContent = 'Dark Mode';
     toggleIcon.children[1].classList.replace('fa-sun', 'fa-moon');
+    imageMode('dark');
 
-    image1.src = "./img/undraw_proud_coder_dark.svg";
-    image2.src = "./img/undraw_conceptual_idea_dark.svg";
-    image3.src = "./img/undraw_conceptual_idea_dark.svg";
 }
 //Light Mode styles
 function lightMode() {
@@ -27,9 +30,7 @@ function lightMode() {
     textBox.style.backgroundColor = 'rgb(0 0 0 / 50%)';
     toggleIcon.children[0].textContent = 'Light Mode';
     toggleIcon.children[1].classList.replace('fa-moon', 'fa-sun');
-    image1.src = "./img/undraw_proud_coder_light.svg";
-    image2.src = "./img/undraw_conceptual_idea_light.svg";
-    image3.src = "./img/undraw_conceptual_idea_light.svg";
+    imageMode('light');
 }
 
 
